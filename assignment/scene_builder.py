@@ -85,22 +85,56 @@ cmds.move(building_x, building_height / 2.0, building_z, building)
 #   - Name the object meaningfully with the 'name' parameter or cmds.rename().
 #   - Position it so it sits on the ground (not floating or buried).
 # ---------------------------------------------------------------------------
+ball_width = 3
+ball_height = 5
+ball_x = -7
+ball_z = 4
 
-
+ball = cmds.polySphere(
+    name="ball_01",
+    width=ball_width,
+    height=ball_height,
+    depth=ball_depth,
+)[0]
 # ---------------------------------------------------------------------------
 # TODO: Add Object 3
 # ---------------------------------------------------------------------------
+pole_width = 2
+pole_height = 8
+pole_depth = 5
+pole_x = -9
+pole_z = 6
 
-
+pole = cmds.polyCylinder(
+    name="pole_01",
+    width=pole_width,
+    height=pole_height,
+    depth=pole_depth,
+)[0]
 # ---------------------------------------------------------------------------
 # TODO: Add Object 4
 # ---------------------------------------------------------------------------
+hat_width = 2
+hat_height = 3
+hat_depth = 3
+hat_x = -10
+hat_z = 7
 
+hat = cmds.polyCone(
+    name="hat_01",
+    width=hat_width,
+    height=hat_height,
+    depth=hat_depth,
+)[0]
 
 # ---------------------------------------------------------------------------
 # TODO: Add Object 5
 # ---------------------------------------------------------------------------
-
+plane_width = 20.0
+plane_depth = 20.0
+plane_position_y = 0.0  # ground plane sits at y=0
+ground_plane = cmds.polyPlane(width=plane_width, height=plane_depth, name="ground_01")[0]
+cmds.move(0, plane_position_y, 0, ground_plane)
 
 # ---------------------------------------------------------------------------
 # TODO (Optional): Add more objects to make your scene more interesting!
